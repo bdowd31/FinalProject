@@ -1,4 +1,5 @@
 class Expense {
+
     private String description;
     private double amount;
 
