@@ -7,15 +7,21 @@ class Category {
     private final List<Expense> expenses = new ArrayList<>();
 
     public Category(String name) {
+
         this.name = name;
+
     }
 
     public void setBudget(double budget) {
+
         this.budget = budget;
+
     }
 
     public void addExpense(Expense expense) {
+
         expenses.add(expense);
+
     }
 
     public void editExpense(int index, String newDesc, double newAmount) {
@@ -58,18 +64,26 @@ class Category {
     }
 
     public List<Expense> getExpenses() {
+
         return expenses;
+
     }
 
     public double totalExpenses() {
+
         return expenses.stream().mapToDouble(Expense::getAmount).sum();
+
     }
 
     public double getBudget() {
+
         return budget;
+
     }
 
     public String getName() {
+
         return name;
+
     }
 }
