@@ -177,25 +177,36 @@ class BudgetManager {
     }
 
     public void viewExpenses() {
+
         System.out.println("View Options:\n1. View All Categories\n2. View Specific Category");
         System.out.print("Choose an option: ");
 
         String input = scanner.nextLine();
+
         if (input.equals("1")) {
+
             double total = 0;
             for (Category c : categories.values()) {
                 System.out.printf("\nCategory: %s | Budget: %.2f | Spent: %.2f%n", c.getName(), c.getBudget(), c.totalExpenses());
                 c.listExpenses();
                 total += c.totalExpenses();
+
             }
             System.out.printf("Total Expenses: %.2f%n", total);
+
         } else if (input.equals("2")) {
+
             Category cat = selectCategory();
+
             if (cat == null) return;
+
             System.out.printf("\nCategory: %s | Budget: %.2f | Spent: %.2f%n", cat.getName(), cat.getBudget(), cat.totalExpenses());
             cat.listExpenses();
+
         } else {
+
             System.out.println("Invalid option.");
+
         }
     }
 
