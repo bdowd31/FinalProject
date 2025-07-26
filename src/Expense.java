@@ -3,8 +3,10 @@ class Expense {
     private double amount;
 
     public Expense(String description, double amount) {
+
         this.description = description;
         this.amount = amount;
+
     }
 
     public String getDescription() {

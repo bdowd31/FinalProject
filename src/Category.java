@@ -1,6 +1,7 @@
 import java.util.*;
 
 class Category {
+
     private final String name;
     private double budget;
     private final List<Expense> expenses = new ArrayList<>();
@@ -18,29 +19,41 @@ class Category {
     }
 
     public void editExpense(int index, String newDesc, double newAmount) {
+
         if (index >= 0 && index < expenses.size()) {
             Expense e = expenses.get(index);
             e.setDescription(newDesc);
             e.setAmount(newAmount);
-            System.out.println("Expense updated.");
+            System.out.println("\nExpense updated.");
+
         } else {
+
             System.out.println("Invalid index.");
+
         }
     }
 
     public void removeExpense(int index) {
-        if (index >= 0 && index < expenses.size()) {
+
+       if (index >= 0 && index < expenses.size()) {
+
             expenses.remove(index);
-            System.out.println("Expense removed.");
+            System.out.println("\nExpense removed.");
+
         } else {
+
             System.out.println("Invalid index.");
+
         }
     }
 
     public void listExpenses() {
+
         for (int i = 0; i < expenses.size(); i++) {
+
             Expense e = expenses.get(i);
             System.out.printf("[%d] %s - %.2f%n", i, e.getDescription(), e.getAmount());
+
         }
     }
 
